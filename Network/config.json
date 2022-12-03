@@ -8,9 +8,9 @@
     "text": "Hazel"
   },
   "text": {
-    "more": "Test",
-    "intro": "Test",
-    "title": "Climate"
+    "more": "Test: This interactive network graph shows the different net-zero initiatives and how their relationships have developed over time.",
+    "intro": "Test: This interactive network graph shows the different net-zero initiatives and how their relationships have developed over time.",
+    "title": "Climate Initiatives Network Map"
   },
   "legend": {
     "edgeLabel": "Links",
@@ -28,7 +28,7 @@
   },
   "sigma": {
     "drawingProperties": {
-      "defaultEdgeType": "curve",
+      "defaultEdgeType": "line",
       "defaultHoverLabelBGColor": "#002147",
       "defaultLabelBGColor": "#ddd",
       "activeFontStyle": "bold",
@@ -40,10 +40,10 @@
       "defaultLabelSize": 14
     },
     "graphProperties": {
-      "maxEdgeSize": 0.5,
-      "minEdgeSize": 0.2,
-      "minNodeSize": 1,
-      "maxNodeSize": 7
+      "maxEdgeSize": 5,
+      "minEdgeSize": 5,
+      "minNodeSize": 7,
+      "maxNodeSize": 35
     },
     "mouseProperties": {
       "maxRatio": 20,
