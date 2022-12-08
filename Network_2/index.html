@@ -9,12 +9,29 @@
 
 
 <script>
+    myColors = new Array(5);
+        // myColors[0] = "#b41f1f";
+        // myColors[1] = "#b41f1f";
+        // myColors[2] = "#b41f1f";
+        // myColors[3] = "#b41f1f";
+        // myColors[4] = "#b41f1f";
+    // fetch("./colors.json")
+    //     .then(resp => resp.json())
+    //     .then(json => {
+    //         json.categories.forEach(e => {
+    //             e.nodes.forEach(n => {
+    //                 // alert(JSON.stringify(e.color))
+    //                 myColors[n.charCodeAt(0) - "A".charCodeAt(0)] = e.color;
+    //             })
+    //         });
 
+    //     })
     var svg = d3.select("svg"),
         width = +svg.attr("width"),
         height = +svg.attr("height"),
+        
         color = d3.scaleOrdinal(d3.schemeCategory10);
-
+        // color = d3.scaleOrdinal(myColors);
 
     /////// SLIDER ///////
     var L = 10;
@@ -41,7 +58,7 @@
             .on("start.interrupt", function() { slider.interrupt(); })
             .on("start drag", function() { return hue(x.invert(d3.event.x)); }));
 
-    var years = d3.range(2010,2016,1)
+    var years = d3.range(2009,2016,1)
     var dx = L/(years.length-1)
     var xticks = d3.range(0,L+dx,dx)
 

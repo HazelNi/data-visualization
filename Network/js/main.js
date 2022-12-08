@@ -32,7 +32,6 @@ jQuery.getJSON(GetQueryStringParams("config","config.json"), function(data, text
 	$(document).ready(setupGUI(config));
 });//End JSON Config load
 
-
 // FUNCTION DECLARATIONS
 
 Object.size = function(obj) {
@@ -86,17 +85,23 @@ function initSigma(config) {
     a.active = !1;
     a.neighbors = {};
     a.detail = !1;
-
+    let curYear = config.curYear;
 
     dataReady = function() {//This is called as soon as data is loaded
 		a.clusters = {};
-
 		a.iterNodes(
 			function (b) { //This is where we populate the array used for the group select box
 
 				// note: index may not be consistent for all nodes. Should calculate each time. 
 				 // alert(JSON.stringify(b.attr.attributes[5].val));
-				// alert(b.x);
+				// console.log(JSON.stringify(b));
+                if (curYear < b.attr.attributes.year_established || curYear > b.attr.attributes.year_obsolete) {
+                    // console.log("drop!" + b.id)
+                    // a.dropNode(b.id);
+                    b.hidden = 1;
+                } else {
+                    b.hidden = 0;
+                }
 				a.clusters[b.color] || (a.clusters[b.color] = []);
 				a.clusters[b.color].push(b.id);//SAH: push id not label
 			}
@@ -118,6 +123,11 @@ function initSigma(config) {
     gexf = sigmaInst = null;
 }
 
+function clearCanvas() {
+    let parentNode = $('#sigma-canvas').parent();
+    $('#sigma-canvas').remove(); 
+    parentNode.html('<div class="sigma-expand" id="sigma-canvas"></div>'); 
+}
 
 function setupGUI(config) {
 	// Initialise main interface elements
@@ -198,6 +208,18 @@ function setupGUI(config) {
 	}
     $GP.cluster = new Cluster($GP.form.find("#attributeselect"));
     config.GP=$GP;
+
+    var slider = document.getElementById("yearRange");
+    var displayYear = document.getElementById("year");
+    displayYear.innerHTML = slider.value;
+    $('#yearRange').text(2022);
+
+    slider.oninput = function() {
+        displayYear.innerHTML = this.value;
+        clearCanvas();
+        config.curYear = parseInt(this.value);
+        initSigma(config);
+    }
     initSigma(config);
 }
 
