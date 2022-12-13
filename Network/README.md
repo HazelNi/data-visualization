@@ -14,7 +14,7 @@ This repo contains codes to build the Sigma version of [Net-Zero Initiatives Net
 - Add incremental months for all the initiatives in the same year so that they show up one by one  
     
     
-
+###### Others
 Template provided by InteractiveVis project
 http://blogs.oii.ox.ac.uk/vis/
 https://github.com/oxfordinternetinstitute/InteractiveVis/
