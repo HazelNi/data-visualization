@@ -1,18 +1,19 @@
-This folder contains codes to build the Sigma version of [Net-Zero Initiatives Network Graph](https://initiatives-netzero-ccsi.surge.sh/), which is exported from Gephi using Sigma.js Template, which generated codes for html, css, etc. 
+# Network (Sigma)
+This repo is created for the project [Environmental Defense Fund (EDF)/Columbia Center on Sustainable Investment(CCSI) Net-Zero Initiatives Network Graph](https://ccsi.columbia.edu/content/paris-aligned-financial-sector-initiatives). 
+This repo contains codes to build the Sigma version of [Net-Zero Initiatives Network Graph](https://initiatives-netzero-ccsi.surge.sh/), which is exported from Gephi using Sigma.js Template, which generated codes for html, css, main.js, data.json, etc. 
 
-Pros: 
-Is published and flexible embedding in websites
-Search bar function
+###### Pros: 
+- Is published and flexible embedding in websites
+- Search bar function
 
-Cons/Remaining Tasks:
-Improve the lag in transitions when the slider is dragged 
-Fix the bug (when click on a node, it shows all the nodes connected to it regardless their years of appearance)
-Edit titles in the info panel, taking out the irrelevant variables
-Changing node shape/color for milestones
-Add incremental months for all the initiatives in the same year so that they show up one by one
-
-
-
+###### Cons/Remaining Tasks:
+- Improve the lag in transitions when the slider is dragged 
+- Fix the bug (when click on a node, it shows all the nodes connected to it regardless their years of appearance)
+- Edit titles in the info panel, taking out the irrelevant variables
+- Changing node shape/color for milestones
+- Add incremental months for all the initiatives in the same year so that they show up one by one  
+    
+    
 
 Template provided by InteractiveVis project
 http://blogs.oii.ox.ac.uk/vis/
